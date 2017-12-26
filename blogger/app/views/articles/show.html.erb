@@ -1,5 +1,12 @@
 <h1><%= @article.title %></h1>
 <p>
+  <% if @article.image.exists? %>
+      <%= image_tag @article.image.url %><br/>
+  <% end %>
+</p>
+<%= image_tag @article.image.url(:medium) %>
+
+<p>
   Tags:
   <% @article.tags.each do |tag| %>
     <%= link_to tag.name, tag_path(tag) %>
