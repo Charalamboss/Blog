@@ -1,11 +1,13 @@
 <h1><%= @article.title %></h1>
-<p>
-  <% if @article.image.exists? %>
-      <%= image_tag @article.image.url %><br/>
-  <% end %>
-</p>
-<%= image_tag @article.image.url(:medium) %>
-
+ <% if false %>
+	<%#If false used to comment %>
+	<p>
+  		<% if @article.image.exists? %>
+        	<%= image_tag @article.image.url %><br/>
+  		<% end %>
+	</p>
+	<%= image_tag @article.image.url(:medium) %>
+<% end %>
 <p>
   Tags:
   <% @article.tags.each do |tag| %>
